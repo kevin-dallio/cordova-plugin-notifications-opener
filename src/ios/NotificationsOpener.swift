@@ -7,7 +7,14 @@ import UIKit
       status: CDVCommandStatus_ERROR
     )
 
-    guard let url = URL(string: UIApplication.openNotificationSettingsURLString) else {
+    var urlString: String
+    if #available(iOS 16.0, *) {
+        urlString = UIApplication.openNotificationSettingsURLString
+    } else {
+        urlString = UIApplication.openSettingsURLString
+    }
+
+    guard let url = URL(string: urlString) else {
       self.commandDelegate!.send(
         pluginResult,
         callbackId: command.callbackId
