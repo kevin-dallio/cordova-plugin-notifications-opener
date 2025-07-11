@@ -7,24 +7,14 @@ import UIKit
       status: CDVCommandStatus_ERROR
     )
 
-    NSLog("NotificationsOpener: open initiated")
-
     var urlString: String
-    if #available(iOS 15.4, *) {
-        NSLog("NotificationsOpener: iOS 15.4+ detected, using openNotificationSettingsURLString")
+    if #available(iOS 16.0, *) {
         urlString = UIApplication.openNotificationSettingsURLString
-    } else if #available(iOS 11.0, *), let bundleIdentifier = Bundle.main.bundleIdentifier {
-        NSLog("NotificationsOpener: iOS 11.0-15.3 detected, using custom URL")
-        urlString = "app-settings:root=NOTIFICATIONS_ID&path=\(bundleIdentifier)"
     } else {
-        NSLog("NotificationsOpener: iOS < 11.0 detected, using openSettingsURLString")
         urlString = UIApplication.openSettingsURLString
     }
 
-    NSLog("NotificationsOpener: attempting to open URL: \(urlString)")
-
     guard let url = URL(string: urlString) else {
-      NSLog("NotificationsOpener: Failed to create URL")
       self.commandDelegate!.send(
         pluginResult,
         callbackId: command.callbackId
@@ -36,12 +26,10 @@ import UIKit
       UIApplication.shared.open(url, options: [:], completionHandler: {
         (success) in
         if success {
-          NSLog("NotificationsOpener: Successfully opened settings")
           pluginResult = CDVPluginResult(
             status: CDVCommandStatus_OK
           )
         } else {
-            NSLog("NotificationsOpener: Failed to open settings")
             pluginResult = CDVPluginResult(
                 status: CDVCommandStatus_ERROR,
                 messageAs: "Failed to open settings."

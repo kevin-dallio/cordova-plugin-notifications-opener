@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-notifications-opener",
-  "version": "1.0.1",
-  "description": "A Cordova plugin that allows you to open the notification settings for your app on iOS.",
+  "version": "1.0.0",
+  "description": "Cordova plugin to open notification settings on iOS.",
   "cordova": {
     "id": "cordova-plugin-notifications-opener",
     "platforms": [
@@ -18,7 +18,7 @@
     "settings",
     "ios"
   ],
-  "author": "Cascade",
+  "author": "Kevin Dallio",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kevin-dallio/cordova-plugin-notifications-opener/issues"

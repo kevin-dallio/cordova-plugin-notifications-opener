@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-notifications-opener" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-notifications-opener" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>NotificationsOpener</name>
-    <author>Cascade</author>
-    <description>A Cordova plugin that allows you to open the notification settings for your app on iOS.</description>
+    <description>Cordova plugin to open notification settings on iOS.</description>
     <license>MIT</license>
     <keywords>cordova,notifications,settings,ios</keywords>
 
