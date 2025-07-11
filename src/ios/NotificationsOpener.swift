@@ -9,7 +9,7 @@ import UIKit
 
     var urlString: String
     if #available(iOS 16.0, *) {
-        urlString = UIApplication.openNotificationSettingsURLString
+        urlString = UIApplication.openDefaultApplicationsSettingsURLString
     } else {
         urlString = UIApplication.openSettingsURLString
     }
